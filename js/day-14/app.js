@@ -34,8 +34,8 @@ function processMask(mask) {
 
 function applyMask(mask, num) {
     const operations = {
-        0: (a, b) => a & ~b,
-        1: (a, b) => a | b
+        '0': (a, b) => a & ~b,
+        '1': (a, b) => a | b
     }
 
     return mask.reduce((n, [c, i]) => operations[c](n, i), num)
