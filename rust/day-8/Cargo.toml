@@ -1,0 +1,12 @@
+[package]
+name = "day-8"
+version = "0.1.0"
+authors = ["Linus Thiel <linus.thiel@bonniernews.se>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+recap = "0.1"
+serde = { version = "1.0", features = ["derive"] }
+enum-utils = "0.1"
