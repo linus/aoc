@@ -3,7 +3,7 @@ use std::collections::HashSet;
 use serde::Deserialize;
 use recap::Recap;
 
-#[derive(Debug, Deserialize, Recap)]
+#[derive(Copy, Clone, Debug, Deserialize, Recap)]
 #[recap(regex = r#"(?x)
     ^
     (?P<operation>\w+)
@@ -12,8 +12,16 @@ use recap::Recap;
     $
 "#)]
 struct Instruction {
-    operation: String,
+    operation: Operation,
     argument: isize,
+}
+
+#[derive(Copy, Clone, Debug, Deserialize, PartialEq)]
+#[serde(rename_all = "lowercase")]
+enum Operation {
+    Jmp,
+    Nop,
+    Acc,
 }
 
 fn main() {
@@ -24,46 +32,46 @@ fn main() {
         .filter_map(|line| line.parse().ok())
         .collect();
 
-    let (accumulator, ended) = calculate(&instructions);
+    let (accumulator, _) = calculate(&instructions);
 
     println!("{}", accumulator);
+
+    println!("{}", repair(&instructions).unwrap());
 }
 
-fn repair(instructions: &Vec<Instruction>) -> usize {
-    let candidates: Vec<usize> = instructions
+fn repair(instructions: &[Instruction]) -> Option<usize> {
+    let candidates: Vec<Vec<Instruction>> = instructions
         .iter()
         .enumerate()
-        .filter(|(_, instruction)| instruction.operation == "jmp" || instruction.operation == "nop")
-        .map(|(i, _)| i)
-        .collect();
-
-    for index in candidates {
-        let new_instructions: &Vec<Instruction> = &instructions
-            .iter()
-            .enumerate()
-            .map(|(i, instruction)| {
+        .filter(|(_, instruction)| instruction.operation == Operation::Jmp || instruction.operation == Operation::Nop)
+        .map(|(index, _)| {
+            instructions.iter().enumerate().map(|(i, &instruction)| {
                 if i != index {
                     instruction
                 } else {
-                    &Instruction {
-                        operation: if instruction.operation == "jmp" { "nop".to_string() } else { "jmp".to_string() },
+                    Instruction {
+                        operation: match instruction.operation {
+                            Operation::Jmp => Operation::Nop,
+                            Operation::Nop => Operation::Jmp,
+                            _ => instruction.operation,
+                        },
                         argument: instruction.argument
                     }
                 }
-            })
-            .collect();
+            }).collect()
+        })
+        .collect();
 
-        loop {
-            let (accumulator, ended) = calculate(&new_instructions);
+    for candidate in candidates {
+        let (accumulator, ended) = calculate(&candidate);
 
-            if ended { return accumulator }
-        }
+        if ended { return Some(accumulator) }
     };
 
-    0
+    None
 }
 
-fn calculate(instructions: &Vec<Instruction>) -> (usize, bool) {
+fn calculate(instructions: &[Instruction]) -> (usize, bool) {
     let mut accumulator = 0;
     let mut position = 0;
     let mut visited = HashSet::new();
@@ -73,13 +81,13 @@ fn calculate(instructions: &Vec<Instruction>) -> (usize, bool) {
 
         let Instruction { operation, argument } = instructions.get(position as usize).unwrap();
 
-        if operation == "jmp" {
-            position += argument;
-            continue;
-        }
-
-        if operation == "acc" {
-            accumulator += argument;
+        match operation {
+            Operation::Jmp => {
+                position += argument;
+                continue;
+            },
+            Operation::Acc => accumulator += argument,
+            Operation::Nop => {}
         }
 
         position += 1;
