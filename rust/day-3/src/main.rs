@@ -11,13 +11,13 @@ fn main() {
             .collect())
         .collect();
 
-    let count_trees = |slope: &Vec<char>| slope.iter().filter(|c| c == &&'#').count();
+    let count_trees = |slope: &Vec<char>| slope.iter().filter(|&c| c == &'#').count();
 
     let result = count_trees(&traverse(&map, 3, 1));
 
     println!("{:#?}", result);
 
-    let result2 = [
+    let result2: usize = [
         traverse(&map, 1, 1),
         traverse(&map, 3, 1),
         traverse(&map, 5, 1),
@@ -26,21 +26,20 @@ fn main() {
     ]
         .iter()
         .map(count_trees)
-        .fold(1, |product, n| product * n);
+        .product();
 
     println!("{:#?}", result2);
 
     fn traverse(map: &Vec<Vec<char>>, right: usize, down: usize) -> Vec<char> {
         let mut col = 0;
-        let mut result = Vec::new();
 
-        for row in map.iter().skip(1).step_by(down) {
+        map.iter().skip(1).step_by(down).fold(Vec::new(), |mut visited, row| {
             col += right;
             col %= row.len();
 
-            result.push(row[col]);
-        }
+            visited.push(row[col]);
 
-        result
+            visited
+        })
     }
 }

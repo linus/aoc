@@ -24,7 +24,6 @@ impl FromStr for Instruction {
                     .chars()
                     .rev()
                     .enumerate()
-                    .filter(|(_, c)| c != &'X')
                     .map(|(i, c)| (c, 2u64.pow(i as u32)))
                     .collect();
 
@@ -52,7 +51,7 @@ fn main() {
         .filter_map(|line| line.parse().ok())
         .collect();
 
-    let mut mask = vec![('0', 0)];
+    let mut mask = vec![];
     let mut memory: Vec<u64> = Vec::new();
 
     for instruction in instructions {

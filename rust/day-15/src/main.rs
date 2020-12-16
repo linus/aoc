@@ -3,12 +3,12 @@ use std::io::{self};
 fn main() {
     let mut buf = String::new();
     match io::stdin().read_line(&mut buf) {
-        Ok(_) => println!("{}", memory_game(&parse_input(buf)).nth(30_000_000 - 1).unwrap()),
+        Ok(_) => println!("{}", memory_game(&parse_input(buf.trim())).nth(30_000_000 - 1).unwrap()),
         Err(_) => {}
     }
 }
 
-fn parse_input(input: String) -> Vec<usize> {
+fn parse_input(input: &str) -> Vec<usize> {
     input.split(',').filter_map(|s| s.parse().ok()).collect()
 }
 
