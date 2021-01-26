@@ -1,4 +1,5 @@
 use std::io::{self, BufRead};
+use std::cmp;
 
 fn main() {
     let mut numbers: Vec<usize> = io::stdin()
@@ -25,16 +26,17 @@ fn main() {
     fn find_jolts(numbers: &[usize]) -> usize {
         numbers
             .iter()
-            .fold(0, |jolts, &n| {
-                println!("{:?}", jolts);
-                let result: usize = numbers
-                    .iter()
-                    .enumerate()
-                    .take_while(|(_, &m)| n - m <= 3)
-                    .map(|(j, _)| find_jolts(&numbers[j..]))
-                    .sum();
+            .enumerate()
+            .fold(1, |jolts, (i, n)| {
+                let result: Vec<&usize> = numbers[i + 1..].iter().take_while(|&m| cmp::max(m, n) - cmp::min(m, n) <= 3).collect();
+//                let result: usize = numbers
+//                    .iter()
+//                    .enumerate()
+//                    .take_while(|(_, &m)| n > m && n - m <= 3)
+//                    .count();
+                println!("{} {} {:?}", i, n, result);
 
-                jolts + 1 + result
+                jolts * cmp::max(result.len(), 1)
             })
     }
 //    let result: usize = numbers
@@ -43,6 +45,6 @@ fn main() {
 //        .map(|(i, &n)| numbers.iter().skip(i).take_while(|&m| m - n <= 3).count())
 //        .product();
 
-    numbers.reverse();
+    //numbers.reverse();
     println!("{:#?}", find_jolts(&numbers[..]));
 }
