@@ -48,7 +48,7 @@ impl PocketDimension {
             self.grid[z - 1][y - 1][x - 1],self.grid[z - 1][y - 1][x],  self.grid[z - 1][y - 1][x + 1], 
             self.grid[z - 1][y - 1][x - 1],self.grid[z - 1][y - 1][x],  self.grid[z - 1][y - 1][x + 1], 
             self.grid[z - 1][y - 1][x - 1],self.grid[z - 1][y - 1][x],  self.grid[z - 1][y - 1][x + 1], 
-        ]
+        ];
         0
     }
 }

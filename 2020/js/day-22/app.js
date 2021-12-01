@@ -1,36 +1,77 @@
-let buffer = ''
+let buf = ''
 
-process.stdin.on('data', (chunk) => buffer += chunk.toString())
-
-process.stdin.on('end', () => {
-    const [player1, player2] = getPlayers(buffer)
-    
-    while (player1.length && player2.length) {
-        turn([player1, player2])
-    }
-
-    const winner = player1.length ? player1 : player2
-
-    console.log(calculateScore(winner))
+process.stdin.on('data', (chunk) => {
+  buf += chunk.toString()
 })
 
-function calculateScore(player) {
-    return player.reduceRight((score, card, index) => score + card * (player.length - index), 0)
+process.stdin.on('end', () => {
+  const foods = parse(buf)
+  const allergens = findAllergens(foods)
+  const allAllergens = new Set(Object.values(allergens).map(a => Array.from(a)).flat())
+
+  console.log(part1(foods, allAllergens))
+  console.log(part2(allergens))
+})
+
+function part1(foods, allergens) {
+  return foods.reduce((count, [ingredients, _]) => {
+    return count + difference(ingredients, allergens).size
+  }, 0)
 }
 
-function turn([player1, player2]) {
-    const card1 = player1.shift()
-    const card2 = player2.shift()
+function part2(allergens) {
+  const resolvedAllergens = {}
 
-    if (card1 > card2) player1.push(card1, card2)
-    else if (card2 > card1) player2.push(card2, card1)
+  while (Object.entries(allergens).length > 0) {
+    for (const [allergen, ingredients] of Object.entries(allergens)) {
+      if (ingredients.size === 1) {
+        resolvedAllergens[Array.from(ingredients)[0]] = allergen
+        delete allergens[allergen]
+      } else {
+        allergens[allergen] = difference(ingredients, new Set(Object.keys(resolvedAllergens)))
+      }
+    }
+  }
+
+  return Object.entries(resolvedAllergens)
+    .sort(([, a], [, b]) => a.localeCompare(b))
+    .map(([ingredient, ]) => ingredient)
+    .join(",")
 }
 
-function getPlayers (str) {
-    const [player1, player2] = str.split('\n\n').map(s => s.split('\n'))
+function findAllergens (foods) {
+  return foods.reduce((resolvedAllergens, [ingredients, allergens]) => {
+    for (const allergen of allergens) {
+      resolvedAllergens[allergen] = allergen in resolvedAllergens
+        ? intersection(resolvedAllergens[allergen], ingredients)
+        : ingredients
+    }
+    return resolvedAllergens
+  }, {})
+}
 
-    return [
-        player1.slice(1).map(s => parseInt(s.trim(), 10)),
-        player2.slice(1).map(s => parseInt(s.trim(), 10)),
-    ]
+function difference (a, b) {
+  let diff = new Set(a)
+  for (const elem of b) {
+    diff.delete(elem)
+  }
+  return diff
+}
+
+function intersection (a, b) {
+  let insect = new Set()
+  for (const elem of b) {
+    if (a.has(elem)) insect.add(elem)
+  }
+  return insect
+}
+
+function parse (input) {
+  return input.trim()
+    .split('\n')
+    .map(line => line.split(" (contains "))
+    .map(([ingredients, allergens]) => [
+      new Set(ingredients.split(' ')),
+      new Set(allergens ? allergens.split(')')[0].split(", ") : null)
+    ])
 }
