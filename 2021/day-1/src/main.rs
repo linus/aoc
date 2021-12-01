@@ -10,6 +10,6 @@ fn main() {
         .filter_map(|line| line.parse().ok())
         .collect();
 
-    println!("part 1: {:?}", part1(numbers.as_slice()));
-    println!("part 2: {:?}", part2(numbers.as_slice()));
+    println!("part 1: {:?}", part1(&numbers));
+    println!("part 2: {:?}", part2(&numbers));
 }
