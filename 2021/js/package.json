@@ -1,0 +1,16 @@
+{
+  "name": "aoc-2021",
+  "version": "1.0.0",
+  "description": "The solutions for Advent of Code 2021 in JS",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "Linus Thiel <linus@yesbabyyes.se>",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@supabase/doctest-js": "^0.1.0",
+    "mocha": "^9.1.3"
+  }
+}
