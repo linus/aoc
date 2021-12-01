@@ -36,8 +36,19 @@
 /// **How many measurements are larger than the previous measurement?**
 /// 
 /// ```
-/// let result = day_1::part1(&[199, 200, 208, 210, 200, 207, 240, 269, 260, 263]);
-/// assert_eq!(result, 7);
+/// let input = [
+///   199,
+///   200,
+///   208,
+///   210,
+///   200,
+///   207,
+///   240,
+///   269,
+///   260,
+///   263,
+/// ];
+/// assert_eq!(day_1::part1(&input), 7);
 /// ```
 
 pub fn part1(numbers: &[usize]) -> usize {
@@ -102,8 +113,19 @@ pub fn part1(numbers: &[usize]) -> usize {
 /// larger than the previous sum?**
 /// 
 /// ```
-/// let result = day_1::part2(&[199, 200, 208, 210, 200, 207, 240, 269, 260, 263]);
-/// assert_eq!(result, 5);
+/// let input = [
+///   199,
+///   200,
+///   208,
+///   210,
+///   200,
+///   207,
+///   240,
+///   269,
+///   260,
+///   263,
+/// ];
+/// assert_eq!(day_1::part2(&input), 5);
 /// ```
 
 pub fn part2(numbers: &[usize]) -> usize {
