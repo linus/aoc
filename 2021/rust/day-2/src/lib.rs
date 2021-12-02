@@ -26,7 +26,13 @@ use serde::Deserialize;
 /// down 8
 /// forward 2
 /// ```
-#[derive(Debug, Deserialize, Recap)]
+///
+/// ```
+/// # use day_2::{Command, Direction};
+/// let command: Command = "forward 5".parse().unwrap();
+/// assert_eq!(command, Command { direction: Direction::Forward, amount: 5 });
+/// ```
+#[derive(Debug, Deserialize, PartialEq, Recap)]
 #[recap(regex = r#"(?x)
     ^
     (?P<direction>\w+)
@@ -39,7 +45,7 @@ pub struct Command {
     pub amount: usize,
 }
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, PartialEq)]
 #[serde(rename_all = "lowercase")]
 pub enum Direction {
     Forward,
@@ -66,7 +72,7 @@ pub enum Direction {
 ///
 /// ```
 /// # use day_2::{part1, Command, Direction};
-/// let input = [
+/// let commands = [
 ///   Command { direction: Direction::Forward, amount: 5 },
 ///   Command { direction: Direction::Down, amount: 5 },
 ///   Command { direction: Direction::Forward, amount: 8 },
@@ -74,7 +80,7 @@ pub enum Direction {
 ///   Command { direction: Direction::Down, amount: 8 },
 ///   Command { direction: Direction::Forward, amount: 2 },
 /// ];
-/// assert_eq!(part1(&input), 150);
+/// assert_eq!(part1(&commands), 150);
 /// ```
 
 pub fn part1(commands: &[Command]) -> usize {
@@ -131,7 +137,7 @@ pub fn part1(commands: &[Command]) -> usize {
 ///
 /// ```
 /// # use day_2::{part2, Command, Direction};
-/// let input = [
+/// let commands = [
 ///   Command { direction: Direction::Forward, amount: 5 },
 ///   Command { direction: Direction::Down, amount: 5 },
 ///   Command { direction: Direction::Forward, amount: 8 },
@@ -139,7 +145,7 @@ pub fn part1(commands: &[Command]) -> usize {
 ///   Command { direction: Direction::Down, amount: 8 },
 ///   Command { direction: Direction::Forward, amount: 2 },
 /// ];
-/// assert_eq!(part2(&input), 900);
+/// assert_eq!(part2(&commands), 900);
 /// ```
 
 pub fn part2(commands: &[Command]) -> usize {
