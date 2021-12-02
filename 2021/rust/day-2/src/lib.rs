@@ -37,7 +37,7 @@ use serde::Deserialize;
 /// // Invalid commands can not be parsed:
 /// let command: Command = "invalid 5".parse().unwrap();
 /// ```
-#[derive(Debug, Deserialize, PartialEq, Recap)]
+#[derive(Debug, Deserialize, Recap)]
 #[recap(regex = r#"(?x)
     ^
     (?P<direction>\w+)
@@ -50,7 +50,7 @@ pub struct Command {
     amount: usize,
 }
 
-#[derive(Debug, Deserialize, PartialEq)]
+#[derive(Debug, Deserialize)]
 #[serde(rename_all = "lowercase")]
 enum Direction {
     Forward,
@@ -89,18 +89,18 @@ enum Direction {
 /// ```
 
 pub fn part1(commands: &[Command]) -> usize {
-    let mut horizontal = 0;
+    let mut position = 0;
     let mut depth = 0;
 
     for command in commands {
         match command.direction {
-            Direction::Forward => horizontal += command.amount,
+            Direction::Forward => position += command.amount,
             Direction::Down => depth += command.amount,
             Direction::Up => depth -= command.amount,
         }
     }
 
-    return horizontal * depth;
+    return position * depth;
 }
 
 /// Based on your calculations, the planned course doesn't seem to make any
