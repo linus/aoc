@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "The solutions for Advent of Code 2021 in JS",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "doc": "jsdoc -c .jsdoc.json"
   },
   "keywords": [],
   "author": "Linus Thiel <linus@yesbabyyes.se>",
@@ -11,6 +12,15 @@
   "dependencies": {},
   "devDependencies": {
     "@supabase/doctest-js": "^0.1.0",
-    "mocha": "^9.1.3"
+    "eslint": "^8.3.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jsdoc": "^37.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jsdoc": "^3.6.7",
+    "mocha": "^9.1.3",
+    "prettier": "^2.5.0"
+  },
+  "prettier": {
+    "singleQuote": true
   }
 }
