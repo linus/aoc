@@ -53,11 +53,11 @@
 pub fn part1(numbers: &[usize]) -> usize {
     let mut num_increases: usize = 0;
     let mut last_num = numbers[0];
-    for num in numbers.iter().skip(1) {
-        if num > &last_num {
+    for &num in numbers.iter().skip(1) {
+        if num > last_num {
             num_increases += 1;
         }
-        last_num = *num;
+        last_num = num;
     }
 
     return num_increases;
