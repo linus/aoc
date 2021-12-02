@@ -1,6 +1,4 @@
 /**
- * @tscheck
- * 
  * The first order of business is to figure out how quickly the depth
  * increases, just so you know what you're dealing with - you never know if
  * the keys will get carried into deeper water by an ocean current or a fish
@@ -48,12 +46,12 @@
  * //=> 7
  */
 
-function part1 (numbers) {
-    return numbers.reduce((numIncreases, number, index, array) => {
-        return (array[index - 1] && number > array[index - 1])
-          ? numIncreases + 1
-          : numIncreases;
-    }, 0);
+function part1(numbers) {
+  return numbers.reduce((numIncreases, number, index, numbers) => {
+    return index > 0 && number > numbers[index - 1]
+      ? numIncreases + 1
+      : numIncreases;
+  }, 0);
 }
 
 /**
@@ -125,24 +123,12 @@ function part1 (numbers) {
  * ])
  * //=> 5
  */
-function part2 (numbers) {
-    let numIncreases = 0;
-    let last = null;
-    for (let window of slidingWindow(numbers, 3)) {
-        const sum = window.reduce((sum, num) => sum + num);
-        if (last !== null && sum > last) {
-            numIncreases++;
-        }
-        last = sum;
-    }
-
-    return numIncreases;
-
-    function * slidingWindow(array, size) {
-        for (let index = 0; index + size <= array.length; index++) {
-            yield array.slice(index, index + size);
-        }
-    }
+function part2(numbers) {
+  return numbers.reduce(
+    (numIncreases, number, index, numbers) =>
+      number < numbers[index + 3] ? numIncreases + 1 : numIncreases,
+    0
+  );
 }
 
 module.exports = {
