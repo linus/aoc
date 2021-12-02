@@ -28,9 +28,14 @@ use serde::Deserialize;
 /// ```
 ///
 /// ```
-/// # use day_2::{Command, Direction};
+/// # use day_2::{Command};
+/// // Valid commands are parsed correctly
 /// let command: Command = "forward 5".parse().unwrap();
-/// assert_eq!(command, Command { direction: Direction::Forward, amount: 5 });
+/// ```
+/// ```should_panic
+/// # use day_2::{Command};
+/// // Invalid commands can not be parsed:
+/// let command: Command = "invalid 5".parse().unwrap();
 /// ```
 #[derive(Debug, Deserialize, PartialEq, Recap)]
 #[recap(regex = r#"(?x)
@@ -41,13 +46,13 @@ use serde::Deserialize;
     $
 "#)]
 pub struct Command {
-    pub direction: Direction,
-    pub amount: usize,
+    direction: Direction,
+    amount: usize,
 }
 
 #[derive(Debug, Deserialize, PartialEq)]
 #[serde(rename_all = "lowercase")]
-pub enum Direction {
+enum Direction {
     Forward,
     Down,
     Up,
@@ -71,15 +76,15 @@ pub enum Direction {
 /// position by your final depth?**
 ///
 /// ```
-/// # use day_2::{part1, Command, Direction};
+/// # use day_2::{part1, Command};
 /// let commands = [
-///   Command { direction: Direction::Forward, amount: 5 },
-///   Command { direction: Direction::Down, amount: 5 },
-///   Command { direction: Direction::Forward, amount: 8 },
-///   Command { direction: Direction::Up, amount: 3 },
-///   Command { direction: Direction::Down, amount: 8 },
-///   Command { direction: Direction::Forward, amount: 2 },
-/// ];
+///   "forward 5",
+///   "down 5",
+///   "forward 8",
+///   "up 3",
+///   "down 8",
+///   "forward 2",
+/// ].map(|line| line.parse().unwrap());
 /// assert_eq!(part1(&commands), 150);
 /// ```
 
@@ -136,15 +141,15 @@ pub fn part1(commands: &[Command]) -> usize {
 /// depth?**
 ///
 /// ```
-/// # use day_2::{part2, Command, Direction};
+/// # use day_2::{part2, Command};
 /// let commands = [
-///   Command { direction: Direction::Forward, amount: 5 },
-///   Command { direction: Direction::Down, amount: 5 },
-///   Command { direction: Direction::Forward, amount: 8 },
-///   Command { direction: Direction::Up, amount: 3 },
-///   Command { direction: Direction::Down, amount: 8 },
-///   Command { direction: Direction::Forward, amount: 2 },
-/// ];
+///   "forward 5",
+///   "down 5",
+///   "forward 8",
+///   "up 3",
+///   "down 8",
+///   "forward 2",
+/// ].map(|line| line.parse().unwrap());
 /// assert_eq!(part2(&commands), 900);
 /// ```
 
