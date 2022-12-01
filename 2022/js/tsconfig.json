@@ -1,0 +1,11 @@
+{
+  "include": ["**/*.js"],
+  "exclude": ["test", "node_modules"],
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "strict": true,
+    "noEmit": true,
+    "downlevelIteration": true
+  }
+}
