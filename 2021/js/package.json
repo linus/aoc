@@ -4,6 +4,7 @@
   "description": "The solutions for Advent of Code 2021 in JS",
   "scripts": {
     "test": "mocha",
+    "watch": "mocha --watch",
     "doc": "jsdoc -c .jsdoc.json"
   },
   "keywords": [],
