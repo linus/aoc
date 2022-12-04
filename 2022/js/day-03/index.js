@@ -18,10 +18,10 @@ function findCommon([first, ...rest]) {
   return first.find(item => rest.every(other => other.includes(item)));
 }
 
-const priorities = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
 function getPriority(item) {
-  return 1 + priorities.indexOf(item);
+  const ascii = item.charCodeAt(0);
+
+  return ascii > 96 ? ascii - 96 : ascii - 38;
 }
 
 export default function solution(input) {
