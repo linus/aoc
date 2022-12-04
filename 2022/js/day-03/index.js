@@ -25,15 +25,16 @@ function getPriority(item) {
 }
 
 export default function solution(input) {
-  let lines = input.split('\n');
+  let lines = input.split('\n')
+    .map(parseLine);
+
   const part1 = lines
-    .map(parseLine)
     .map(parseContents)
     .map(findCommon)
     .map(getPriority)
     .reduce((a, b) => a + b);
 
-  const part2 = Array.from(chunkArray(lines.map(parseLine), 3))
+  const part2 = Array.from(chunkArray(lines, 3))
     .map(findCommon)
     .map(getPriority)
     .reduce((a, b) => a + b);
