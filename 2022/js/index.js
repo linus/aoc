@@ -7,7 +7,7 @@ async function main(day, inputFile) {
   inputStream
     .on('data', (chunk) => input.push(chunk))
     .on('end', () => {
-      const { part1, part2 } = solution(input.join(''));
+      const { part1, part2 } = solution(input.join('').trim());
 
       console.log('part 1:', part1);
       console.log('part 2:', part2);
