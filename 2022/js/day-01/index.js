@@ -1,17 +1,12 @@
-import { createReadStream } from 'fs';
-import solution from './solution.js';
+export default function solution(input) {
+  const calories = input
+    .split(/\n\n/)
+    .map((s) => s.split(/\n/).map((n) => Number(n)))
+    .map((nums) => nums.reduce((a, b) => a + b))
+    .sort((a, b) => b - a);
 
-function main(inputFile) {
-  const inputStream = inputFile ? createReadStream(inputFile) : process.stdin;
-  let input = [];
-  inputStream
-    .on('data', (chunk) => input.push(chunk))
-    .on('end', () => {
-      const { part1, part2 } = solution(input.join(''));
-
-      console.log('part 1:', part1);
-      console.log('part 2:', part2);
-    });
-}
-
-main(...process.argv.slice(2));
+  return {
+    part1: calories[0],
+    part2: calories[0] + calories[1] + calories[2]
+  };
+};
