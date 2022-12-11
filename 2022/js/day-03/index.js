@@ -1,47 +1,32 @@
 import { chunkArray } from '../utils.js';
+import { parseLine, parseContents, findCommon, getPriority } from './lib.js';
 
-function parseLine(line) {
-  return line.split('');
-}
-
-function parseContents(itemList) {
-  const len = itemList.length / 2;
-  const firstCompartment = itemList.slice(0, len);
-  const secondCompartment = itemList.slice(len);
-  return [
-    firstCompartment,
-    secondCompartment,
-  ]
-}
-
-function findCommon([first, ...rest]) {
-  return first.find(item => rest.every(other => other.includes(item)));
-}
-
-function getPriority(item) {
-  const ascii = item.charCodeAt(0);
-
-  return ascii > 96 ? ascii - 96 : ascii - 38;
-}
-
-export default function solution(input) {
-  let lines = input.split('\n')
-    .map(parseLine);
+/**
+ *
+ * @param {string} input
+ * @returns {{
+ *   part1: number,
+ *   part2: number
+ * }}
+ */
+export function solution(input) {
+  let lines = input.split('\n').map(parseLine);
 
   const part1 = lines
     .map(parseContents)
     .map(findCommon)
+    // @ts-ignore
     .map(getPriority)
     .reduce((a, b) => a + b);
 
   const part2 = Array.from(chunkArray(lines, 3))
     .map(findCommon)
+    // @ts-ignore
     .map(getPriority)
     .reduce((a, b) => a + b);
 
   return {
-    part1, 
-    part2, 
+    part1,
+    part2,
   };
-};
-
+}
