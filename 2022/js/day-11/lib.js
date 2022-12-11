@@ -1,5 +1,3 @@
-import { runInNewContext } from 'node:vm';
-
 /**
  * @typedef Monkey
  * @type {{
