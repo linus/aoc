@@ -31,13 +31,12 @@ export function solution(input) {
 
   for (let cycle = 1, cpu = cpuIterator(instructions); !state?.done; cycle++) {
     state = cpu.next();
-    if (!state.value) continue;
+    if (!state.value) continue; // To please TS
     let position = (cycle - 1) % 40;
     let pixel =
       state.value - 1 <= position && position <= state.value + 1 ? '#' : '.';
     crt[crt.length - 1].push(pixel);
-    //console.log(position, state.value);
-    if (cycle % 40 === 20 && state.value) {
+    if (cycle % 40 === 20) {
       signalStrengths.push(cycle * state.value);
     }
     if (cycle % 40 === 0) {
