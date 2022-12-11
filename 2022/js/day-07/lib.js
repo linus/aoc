@@ -1,7 +1,29 @@
 /**
+ * @typedef {{
+ *   type: 'command',
+ *   command: 'cd',
+ *   directory: string
+ * } | {
+ *   type: 'command',
+ *   command: 'ls'
+ * }} Command
+ *
+ * @typedef {{
+ *   type: 'output',
+ *   outputType: 'dir',
+ *   dir: string
+ * } | {
+ *   type: 'output',
+ *   outputType: 'file',
+ *   file: {
+ *     size: number,
+ *     name: string
+ *   }
+ * }} Output
+ */
+/**
  *
  * @param {string} row
- * @returns {any}
  */
 export function parseRow(row) {
   if (row.startsWith('$ ')) return parseCommand(row.slice(2));
@@ -11,26 +33,43 @@ export function parseRow(row) {
 /**
  *
  * @param {string} command
+ * @returns {Command}
  * @example parseCommand('cd a')
- * //=> { command: 'cd', directory: 'a' }
+ * //=> { type: 'command', command: 'cd', directory: 'a' }
  * @example parseCommand('ls')
- * //=> { command: 'ls' }
+ * //=> { type: 'command', command: 'ls' }
  */
 export function parseCommand(command) {
   if (command.startsWith('cd '))
-    return { command: 'cd', directory: command.slice(3) };
-  return { command: 'ls' };
+    return { type: 'command', command: 'cd', directory: command.slice(3) };
+  return { type: 'command', command: 'ls' };
 }
 
 /**
  * @param {string} output
+ * @returns {Output}
  * @example parseOutput('dir a')
- * //=> { type: 'dir', dir: 'a' }
+ * //=> { type: 'output', outputType: 'dir', dir: 'a' }
  * @example parseOutput('123 foo')
- * //=> { type: 'file', file: [123, 'foo' ]}
+ * //=> {
+ *   type: 'output',
+ *   outputType: 'file',
+ *   file: {
+ *     size: 123,
+ *     name: 'foo'
+ *   }
+ * }
  */
 export function parseOutput(output) {
-  if (output.startsWith('dir')) return { type: 'dir', dir: output.slice(4) };
+  if (output.startsWith('dir'))
+    return { type: 'output', outputType: 'dir', dir: output.slice(4) };
   const [size, filename] = output.split(' ');
-  return { type: 'file', file: [Number(size), filename] };
+  return {
+    type: 'output',
+    outputType: 'file',
+    file: {
+      size: Number(size),
+      name: filename,
+    },
+  };
 }

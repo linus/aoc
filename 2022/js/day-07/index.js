@@ -39,18 +39,18 @@ import { parseRow } from './lib.js';
 export function solution(input) {
   const fsMap = new Map();
   let currentPath = [];
-  for (const row of input.trim().split('\n')) {
-    const result = parseRow(row);
-    if (result.command === 'cd') {
+  const rows = input.trim().split('\n').map(parseRow);
+  for (const result of rows) {
+    if (result.type === 'command' && result.command === 'cd') {
       if (result.directory === '..') {
         currentPath.pop();
       } else {
         currentPath.push(result.directory);
       }
-    } else if (result.type === 'file') {
+    } else if (result.type === 'output' && result.outputType === 'file') {
       for (let i = 0; i <= currentPath.length; i++) {
         const key = currentPath.slice(0, i).join('/');
-        fsMap.set(key, result.file[0] + (fsMap.get(key) || 0));
+        fsMap.set(key, result.file.size + (fsMap.get(key) || 0));
       }
     }
   }
