@@ -1,3 +1,4 @@
+// @ts-ignore
 import { testy as test } from '@linus/testy';
 
 describe('AoC 2022', () => {
@@ -15,7 +16,10 @@ describe('AoC 2022', () => {
       test('day-04/index.js');
       test('day-04/lib.js');
     });
-    describe('Day 5', () => test('day-05/index.js'));
+    describe('Day 5', () => {
+      test('day-05/index.js');
+      test('day-05/lib.js');
+    });
     describe('Day 6', () => {
       test('day-06/index.js');
       test('day-06/lib.js');
