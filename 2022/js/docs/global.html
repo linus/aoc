@@ -2078,7 +2078,7 @@ complete the first. Each puzzle grants <em>one star</em>. Good luck!</p>
     
 
     
-    <h4 class="name" id="parseCommand"><span class="type-signature"></span>parseCommand<span class="signature">(command)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="parseCommand"><span class="type-signature"></span>parseCommand<span class="signature">(command)</span><span class="type-signature"> &rarr; {Command}</span></h4>
     
 
     
@@ -2175,7 +2175,7 @@ complete the first. Each puzzle grants <em>one star</em>. Good luck!</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="day-07_lib.js.html">day-07/lib.js</a>, <a href="day-07_lib.js.html#line19">line 19</a>
+        <a href="day-07_lib.js.html">day-07/lib.js</a>, <a href="day-07_lib.js.html#line42">line 42</a>
     </li></ul></dd>
     
 
@@ -2200,6 +2200,24 @@ complete the first. Each puzzle grants <em>one star</em>. Good luck!</p>
 
 
 
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Command</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -2207,10 +2225,10 @@ complete the first. Each puzzle grants <em>one star</em>. Good luck!</p>
     <h5>Examples</h5>
     
     <pre class="prettyprint"><code>parseCommand('cd a')
-//=> { command: 'cd', directory: 'a' }</code></pre>
+//=> { type: 'command', command: 'cd', directory: 'a' }</code></pre>
 
     <pre class="prettyprint"><code>parseCommand('ls')
-//=> { command: 'ls' }</code></pre>
+//=> { type: 'command', command: 'ls' }</code></pre>
 
 
 
@@ -3537,7 +3555,7 @@ move 3 from 1 to 3
     
 
     
-    <h4 class="name" id="parseOutput"><span class="type-signature"></span>parseOutput<span class="signature">(output)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="parseOutput"><span class="type-signature"></span>parseOutput<span class="signature">(output)</span><span class="type-signature"> &rarr; {<a href="global.html#Output">Output</a>}</span></h4>
     
 
     
@@ -3634,7 +3652,7 @@ move 3 from 1 to 3
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="day-07_lib.js.html">day-07/lib.js</a>, <a href="day-07_lib.js.html#line32">line 32</a>
+        <a href="day-07_lib.js.html">day-07/lib.js</a>, <a href="day-07_lib.js.html#line63">line 63</a>
     </li></ul></dd>
     
 
@@ -3659,6 +3677,24 @@ move 3 from 1 to 3
 
 
 
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="global.html#Output">Output</a></span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -3666,10 +3702,17 @@ move 3 from 1 to 3
     <h5>Examples</h5>
     
     <pre class="prettyprint"><code>parseOutput('dir a')
-//=> { type: 'dir', dir: 'a' }</code></pre>
+//=> { type: 'output', outputType: 'dir', dir: 'a' }</code></pre>
 
     <pre class="prettyprint"><code>parseOutput('123 foo')
-//=> { type: 'file', file: [123, 'foo' ]}</code></pre>
+//=> {
+  type: 'output',
+  outputType: 'file',
+  file: {
+    size: 123,
+    name: 'foo'
+  }
+}</code></pre>
 
 
 
@@ -3679,7 +3722,7 @@ move 3 from 1 to 3
     
 
     
-    <h4 class="name" id="parseRow"><span class="type-signature"></span>parseRow<span class="signature">(row)</span><span class="type-signature"> &rarr; {any}</span></h4>
+    <h4 class="name" id="parseRow"><span class="type-signature"></span>parseRow<span class="signature">(row)</span><span class="type-signature"></span></h4>
     
 
     
@@ -3776,7 +3819,7 @@ move 3 from 1 to 3
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="day-07_lib.js.html">day-07/lib.js</a>, <a href="day-07_lib.js.html#line6">line 6</a>
+        <a href="day-07_lib.js.html">day-07/lib.js</a>, <a href="day-07_lib.js.html#line28">line 28</a>
     </li></ul></dd>
     
 
@@ -3801,24 +3844,6 @@ move 3 from 1 to 3
 
 
 
-<h5>Returns:</h5>
-
-        
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">any</span>
-
-
-    </dd>
-</dl>
-
-    
 
 
 
@@ -5794,6 +5819,77 @@ https://github.com/jsdoc/jsdoc/issues/1073#issuecomment-167204327</p>
 
             
                 
+<h4 class="name" id="Output">Output</h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-07_lib.js.html">day-07/lib.js</a>, <a href="day-07_lib.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
 <h4 class="name" id="Pair">Pair</h4>
 
 
@@ -6052,7 +6148,7 @@ https://github.com/jsdoc/jsdoc/issues/1073#issuecomment-167204327</p>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Sun Dec 11 2022 16:47:20 GMT+0100 (Central European Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Sun Dec 11 2022 17:27:40 GMT+0100 (Central European Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
