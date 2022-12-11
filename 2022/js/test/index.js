@@ -28,10 +28,13 @@ describe('AoC 2022', () => {
       test('day-07/index.js');
       test('day-07/lib.js');
     });
-
     describe('Day 8', () => {
       test('day-08/index.js');
       test('day-08/lib.js');
+    });
+    describe('Day 11', () => {
+      test('day-11/index.js');
+      test('day-11/lib.js');
     });
   });
 
