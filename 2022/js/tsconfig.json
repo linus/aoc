@@ -2,6 +2,7 @@
   "include": ["**/*.js"],
   "exclude": ["test", "node_modules"],
   "compilerOptions": {
+    "lib": ["esnext"],
     "allowJs": true,
     "checkJs": true,
     "strict": true,
