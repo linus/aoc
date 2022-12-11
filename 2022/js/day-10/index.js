@@ -27,31 +27,25 @@ export function solution(input) {
   let signalStrengths = [];
   let state;
   /** @type {string[][]} */
-  let crt = [[]];
+  let crt = [];
 
   for (let cycle = 1, cpu = cpuIterator(instructions); !state?.done; cycle++) {
     state = cpu.next();
     if (!state.value) continue; // To please TS
     let position = (cycle - 1) % 40;
+    if (position === 0) {
+      crt.push([]);
+    }
     let pixel =
       state.value - 1 <= position && position <= state.value + 1 ? '#' : '.';
     crt[crt.length - 1].push(pixel);
     if (cycle % 40 === 20) {
       signalStrengths.push(cycle * state.value);
     }
-    if (cycle % 40 === 0) {
-      crt.push([]);
-    }
   }
 
   return {
     part1: signalStrengths.reduce((a, b) => a + b),
-    part2:
-      '\n' +
-      crt
-        .slice(0, -1)
-        .map((row) => row.join(''))
-        .join('\n') +
-      '\n',
+    part2: `\n${crt.map((row) => row.join('')).join('\n')}\n`,
   };
 }
