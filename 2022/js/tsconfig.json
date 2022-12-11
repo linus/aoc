@@ -2,7 +2,8 @@
   "include": ["**/*.js"],
   "exclude": ["docs", "node_modules"],
   "compilerOptions": {
-    "lib": ["esnext"],
+    "target": "ESNext",
+    "lib": ["ESNext"],
     "allowJs": true,
     "checkJs": true,
     "strict": true,
