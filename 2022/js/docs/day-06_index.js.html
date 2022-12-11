@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: day-06/index.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: day-06/index.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { findUnique } from './lib.js';
+/**
+ * --- Day 6: Tuning Trouble ---
+ * -----------------------------
+ *
+ * The preparations are finally complete; you and the Elves leave camp on foot
+ * and begin to make your way toward the star fruit grove.
+ *
+ * As you move through the dense undergrowth, one of the Elves gives you a
+ * handheld device. He says that it has many fancy features, but the most
+ * important one to set up right now is the communication system.
+ *
+ * However, because he's heard you have significant experience dealing with
+ * signal-based systems, he convinced the other Elves that it would be okay to
+ * give you their one malfunctioning device - surely you'll have no problem
+ * fixing it.
+ *
+ * As if inspired by comedic timing, the device emits a few colorful sparks.
+ *
+ * To be able to communicate with the Elves, the device needs to lock on to
+ * their signal. The signal is a series of seemingly-random characters that
+ * the device receives one at a time.
+ *
+ * To fix the communication system, you need to add a subroutine to the device
+ * that detects a start-of-packet marker in the datastream. In the protocol
+ * being used by the Elves, the start of a packet is indicated by a sequence
+ * of four characters that are all different.
+ *
+ * The device will send your subroutine a datastream buffer (your puzzle
+ * input); your subroutine needs to identify the first position where the four
+ * most recently received characters were all different. Specifically, it
+ * needs to report the number of characters from the beginning of the buffer
+ * to the end of the first such four-character marker.
+ *
+ * For example, suppose you receive the following datastream buffer:
+ *
+ * ```text
+ * mjqjpqmgbljsphdztnvjfqwrcgsmlb
+ * ````
+ * After the first three characters (mjq) have been received, there haven't
+ * been enough characters received yet to find the marker. The first time a
+ * marker could occur is after the fourth character is received, making the
+ * most recent four characters mjqj. Because j is repeated, this isn't a
+ * marker.
+ *
+ * The first time a marker appears is after the seventh character arrives.
+ * Once it does, the last four characters received are jpqm, which are all
+ * different. In this case, your subroutine should report the value 7, because
+ * the first start-of-packet marker is complete after 7 characters have been
+ * processed.
+ *
+ * Here are a few more examples:
+ *
+ * - `bvwbjplbgvbhsrlpgdmjqwftvncz`: first marker after character 5
+ * - `nppdvjthqldpwncqszvftbrmjlhg`: first marker after character 6
+ * - `nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg`: first marker after character 10
+ * - `zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw`: first marker after character 11
+ *
+ * *How many characters need to be processed before the first start-of-packet
+ * marker is detected?*
+ *
+ * @param {string} input
+ * @returns {{
+ *   part1: number | undefined,
+ *   part2: number | undefined
+ * }}
+ * @example solution("mjqjpqmgbljsphdztnvjfqwrcgsmlb")
+ * //=> {
+ *   part1: 7,
+ *   part2: 19,
+ * }
+ */
+export function solution(input) {
+  return {
+    part1: findUnique(input, 4),
+    part2: findUnique(input, 14),
+  };
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#calculateMove">calculateMove</a></li><li><a href="global.html#calculateOutcomeScore">calculateOutcomeScore</a></li><li><a href="global.html#calculateScore">calculateScore</a></li><li><a href="global.html#chunkArray">chunkArray</a></li><li><a href="global.html#contains">contains</a></li><li><a href="global.html#findCommon">findCommon</a></li><li><a href="global.html#findNumShorter">findNumShorter</a></li><li><a href="global.html#findUnique">findUnique</a></li><li><a href="global.html#getPriority">getPriority</a></li><li><a href="global.html#main">main</a></li><li><a href="global.html#overlaps">overlaps</a></li><li><a href="global.html#parseCommand">parseCommand</a></li><li><a href="global.html#parseContents">parseContents</a></li><li><a href="global.html#parseCrateDefinitions">parseCrateDefinitions</a></li><li><a href="global.html#parseInput">parseInput</a></li><li><a href="global.html#parseLine">parseLine</a></li><li><a href="global.html#parseMove">parseMove</a></li><li><a href="global.html#parseMoves">parseMoves</a></li><li><a href="global.html#parseOutput">parseOutput</a></li><li><a href="global.html#parseRow">parseRow</a></li><li><a href="global.html#parseSections">parseSections</a></li><li><a href="global.html#solution">solution</a></li><li><a href="global.html#transposeArray">transposeArray</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Sun Dec 11 2022 11:50:57 GMT+0100 (Central European Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

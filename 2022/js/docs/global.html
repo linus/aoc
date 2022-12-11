@@ -1,0 +1,6061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Global</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Global</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2></h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="calculateMove"><span class="type-signature"></span>calculateMove<span class="signature">(param0)</span><span class="type-signature"> &rarr; {<a href="global.html#MoveTuple">MoveTuple</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Given their move and an outcome, calculate our move</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>param0</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#MoveTuple">MoveTuple</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Their move and the outcome</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-02_lib.js.html">day-02/lib.js</a>, <a href="day-02_lib.js.html#line46">line 46</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Their move and our calculated move</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="global.html#MoveTuple">MoveTuple</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>calculateMove([0, 1])
+//=> [0, 0]</code></pre>
+
+    <pre class="prettyprint"><code>calculateMove([0, 0])
+//=> [0, 2]</code></pre>
+
+    <pre class="prettyprint"><code>calculateMove([2, 2])
+//=> [2, 0]</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="calculateOutcomeScore"><span class="type-signature"></span>calculateOutcomeScore<span class="signature">(them, us)</span><span class="type-signature"> &rarr; {number|undefined}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Calculate the outcome score (0, 3, 6 for loss, draw, win, respectively)</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>them</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">move</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Their move</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>us</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">move</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Our move</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-02_lib.js.html">day-02/lib.js</a>, <a href="day-02_lib.js.html#line75">line 75</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The outcome score</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+|
+
+<span class="param-type">undefined</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>calculateOutcomeScore(1, 1)
+//=> 3</code></pre>
+
+    <pre class="prettyprint"><code>calculateOutcomeScore(0, 2)
+//=> 0</code></pre>
+
+    <pre class="prettyprint"><code>calculateOutcomeScore(0, 1)
+//=> 6</code></pre>
+
+    <pre class="prettyprint"><code>calculateOutcomeScore(2, 0)
+//=> 6</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="calculateScore"><span class="type-signature"></span>calculateScore<span class="signature">(param0)</span><span class="type-signature"> &rarr; {number}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Calculate the score for the given play</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>param0</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#MoveTuple">MoveTuple</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Their move and our move</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-02_lib.js.html">day-02/lib.js</a>, <a href="day-02_lib.js.html#line94">line 94</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The score</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="chunkArray"><span class="type-signature"></span>chunkArray<span class="signature">(array, chunkSize)</span><span class="type-signature"> &rarr; {Array.&lt;Array.&lt;T>>}</span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>array</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;T></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>chunkSize</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils.js.html">utils.js</a>, <a href="utils.js.html#line18">line 18</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Yields:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;Array.&lt;T>></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>chunkArray([1, 2, 3, 4], 2).next()
+//=> {
+  value: [1, 2],
+  done: false,
+}</code></pre>
+
+    <pre class="prettyprint"><code>Array.from(chunkArray([17, 4711], 1))
+//=> [
+  [17],
+  [4711],
+]</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="contains"><span class="type-signature"></span>contains<span class="signature">(param0)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Check whether either pair contains the other or not</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>param0</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#Pair">Pair</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The two pairs</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-04_lib.js.html">day-04/lib.js</a>, <a href="day-04_lib.js.html#line57">line 57</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Whether either pair contains the other or not</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>contains([[1, 2], [3, 4]])
+//=> false</code></pre>
+
+    <pre class="prettyprint"><code>contains([[1, 4], [2, 3]])
+//=> true</code></pre>
+
+    <pre class="prettyprint"><code>contains([[2, 3], [1, 4]])
+//=> true</code></pre>
+
+    <pre class="prettyprint"><code>contains([[1, 4], [1, 2]])
+//=> true</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="findCommon"><span class="type-signature"></span>findCommon<span class="signature">(param0)</span><span class="type-signature"> &rarr; {T|undefined}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Find the first common member of the supplied arrays</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>param0</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Array.&lt;T>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The arrays in which to find a common member</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-03_lib.js.html">day-03/lib.js</a>, <a href="day-03_lib.js.html#line40">line 40</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The first common member found</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">T</span>
+|
+
+<span class="param-type">undefined</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>findCommon([['foo', 'bar'], ['foo', 'baz']])
+//=> 'foo'</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="findNumShorter"><span class="type-signature"></span>findNumShorter<span class="signature">(array, n)</span><span class="type-signature"> &rarr; {number}</span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>array</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;number></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>n</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-08_lib.js.html">day-08/lib.js</a>, <a href="day-08_lib.js.html#line11">line 11</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>findNumShorter([3], 5)
+//=> 1</code></pre>
+
+    <pre class="prettyprint"><code>findNumShorter([5, 2], 5)
+//=> 1</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="findUnique"><span class="type-signature"></span>findUnique<span class="signature">(input, n)</span><span class="type-signature"> &rarr; {number|undefined}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Find the first occurrence of n unique characters in input string</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>input</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The input string</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>n</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The number of consecutive unique characters to find</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-06_lib.js.html">day-06/lib.js</a>, <a href="day-06_lib.js.html#line10">line 10</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The index of the end of n consecutive unique characters</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+|
+
+<span class="param-type">undefined</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>findUnique('abababcb', 3)
+//=> 7</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="getPriority"><span class="type-signature"></span>getPriority<span class="signature">(item)</span><span class="type-signature"> &rarr; {number}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Return the priority for an item. a-z have priority 1-26, A-Z 27-52.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>item</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The item to prioritize</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-03_lib.js.html">day-03/lib.js</a>, <a href="day-03_lib.js.html#line58">line 58</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The item's priority</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>getPriority('a')
+//=> 1</code></pre>
+
+    <pre class="prettyprint"><code>getPriority('z')
+//=> 26</code></pre>
+
+    <pre class="prettyprint"><code>getPriority('A')
+//=> 27</code></pre>
+
+    <pre class="prettyprint"><code>getPriority('Z')
+//=> 52</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="main"><span class="type-signature">(async) </span>main<span class="signature">(day, inputFile<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Santa's reindeer typically eat regular reindeer food, but they need a lot
+of [magical energy][magical_energy] to deliver presents on Christmas. For that, their
+favorite snack is a special type of <em>star</em> fruit that only grows deep in the
+jungle. The Elves have brought you on their annual expedition to the grove
+where the fruit grows.</p>
+<p>To supply enough magical energy, the expedition needs to retrieve a minimum
+of <em>fifty stars</em> by December 25th. Although the Elves assure you that the
+grove has plenty of fruit, you decide to grab any fruit you see along the
+way, just in case.</p>
+<p>Collect stars by solving puzzles. Two puzzles will be made available on
+each day in the Advent calendar; the second puzzle is unlocked when you
+complete the first. Each puzzle grants <em>one star</em>. Good luck!</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>day</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputFile</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Runs the solution for the specified day.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line26">line 26</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="overlaps"><span class="type-signature"></span>overlaps<span class="signature">(param0)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Check whether either pair overlaps the other or not</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>param0</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#Pair">Pair</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The two pairs</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-04_lib.js.html">day-04/lib.js</a>, <a href="day-04_lib.js.html#line75">line 75</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Whether either pair overlaps the other or not</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>overlaps([[1, 2], [3, 4]])
+//=> false</code></pre>
+
+    <pre class="prettyprint"><code>overlaps([[1, 2], [2, 3]])
+//=> true</code></pre>
+
+    <pre class="prettyprint"><code>overlaps([[1, 4], [1, 2]])
+//=> true</code></pre>
+
+    <pre class="prettyprint"><code>overlaps([[3, 4], [1, 3]])
+//=> true</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="parseCommand"><span class="type-signature"></span>parseCommand<span class="signature">(command)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>command</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-07_lib.js.html">day-07/lib.js</a>, <a href="day-07_lib.js.html#line19">line 19</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>parseCommand('cd a')
+//=> { command: 'cd', directory: 'a' }</code></pre>
+
+    <pre class="prettyprint"><code>parseCommand('ls')
+//=> { command: 'ls' }</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="parseContents"><span class="type-signature"></span>parseContents<span class="signature">(itemList)</span><span class="type-signature"> &rarr; {Array.&lt;Array.&lt;T>>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Split an array in parts one and two, in the middle</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>itemList</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;T></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-03_lib.js.html">day-03/lib.js</a>, <a href="day-03_lib.js.html#line24">line 24</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The first and second half of the string</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;Array.&lt;T>></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>parseContents([1, 2, 3, 4])
+//=> [[1, 2], [3, 4]]</code></pre>
+
+    <pre class="prettyprint"><code>parseContents(['a', 'b', 'c', 'd'])
+//=> [['a', 'b'], ['c', 'd']]</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="parseCrateDefinitions"><span class="type-signature"></span>parseCrateDefinitions<span class="signature">(crateDefinitions)</span><span class="type-signature"> &rarr; {Array.&lt;Array.&lt;string>>}</span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>crateDefinitions</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-05_lib.js.html">day-05/lib.js</a>, <a href="day-05_lib.js.html#line42">line 42</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>the crates, each containing its letters</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;Array.&lt;string>></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>parseCrateDefinitions(`
+    [D]
+[N] [C]
+[Z] [M] [P]
+ 1   2   3
+`)
+//=> [
+  ['Z', 'N'],
+  ['M', 'C', 'D'],
+  ['P'],
+]</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="parseInput"><span class="type-signature"></span>parseInput<span class="signature">(input)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>input</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-05_lib.js.html">day-05/lib.js</a>, <a href="day-05_lib.js.html#line18">line 18</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="parseLine"><span class="type-signature"></span>parseLine<span class="signature">(line)</span><span class="type-signature"> &rarr; {Array.&lt;string>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Parse a string into an array of its letters</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>line</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The string to parse</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-03_lib.js.html">day-03/lib.js</a>, <a href="day-03_lib.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The letters in the string</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;string></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>parseLine('foo')
+//=> ['f', 'o', 'o']</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="parseLine"><span class="type-signature"></span>parseLine<span class="signature">(line)</span><span class="type-signature"> &rarr; {<a href="global.html#Pair">Pair</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Parse a line into pairs of assignments with from - to bounds</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>line</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-04_lib.js.html">day-04/lib.js</a>, <a href="day-04_lib.js.html#line28">line 28</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The pair of assignments</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="global.html#Pair">Pair</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>parseLine('1-2,3-4')
+//=> [[1, 2], [3, 4]]</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="parseMove"><span class="type-signature"></span>parseMove<span class="signature">(definition)</span><span class="type-signature"> &rarr; {<a href="global.html#MoveTuple">MoveTuple</a>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Parse a move definition</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>definition</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The move definition, e.g. 'A X'</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-02_lib.js.html">day-02/lib.js</a>, <a href="day-02_lib.js.html#line30">line 30</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="global.html#MoveTuple">MoveTuple</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>parseMove('A Y')
+//=> [0, 1]</code></pre>
+
+    <pre class="prettyprint"><code>parseMove('B X')
+//=> [1, 0]</code></pre>
+
+    <pre class="prettyprint"><code>parseMove('C Z')
+//=> [2, 2]</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="parseMove"><span class="type-signature"></span>parseMove<span class="signature">(move)</span><span class="type-signature"> &rarr; {<a href="global.html#Move">Move</a>}</span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>move</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-05_lib.js.html">day-05/lib.js</a>, <a href="day-05_lib.js.html#line82">line 82</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="global.html#Move">Move</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>parseMove('move 1 from 1 to 2')
+//=> { num: 1, from: 1, to: 2}</code></pre>
+
+    <pre class="prettyprint"><code>parseMove('move 2 from 3 to 1')
+//=> { num: 2, from: 3, to: 1}</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="parseMoves"><span class="type-signature"></span>parseMoves<span class="signature">(moves)</span><span class="type-signature"> &rarr; {Array.&lt;<a href="global.html#Move">Move</a>>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Parse a list of move definitions</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>moves</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The move definitions</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-05_lib.js.html">day-05/lib.js</a>, <a href="day-05_lib.js.html#line67">line 67</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The moves</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;<a href="global.html#Move">Move</a>></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>parseMoves(`
+move 1 from 2 to 1
+move 3 from 1 to 3
+`)
+//=> [
+  {num: 1, from: 2, to: 1},
+  {num: 3, from: 1, to: 3}
+]</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="parseOutput"><span class="type-signature"></span>parseOutput<span class="signature">(output)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>output</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-07_lib.js.html">day-07/lib.js</a>, <a href="day-07_lib.js.html#line32">line 32</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>parseOutput('dir a')
+//=> { type: 'dir', dir: 'a' }</code></pre>
+
+    <pre class="prettyprint"><code>parseOutput('123 foo')
+//=> { type: 'file', file: [123, 'foo' ]}</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="parseRow"><span class="type-signature"></span>parseRow<span class="signature">(row)</span><span class="type-signature"> &rarr; {any}</span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>row</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-07_lib.js.html">day-07/lib.js</a>, <a href="day-07_lib.js.html#line6">line 6</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">any</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="parseSections"><span class="type-signature"></span>parseSections<span class="signature">(definition)</span><span class="type-signature"> &rarr; {Assignment}</span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>definition</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-04_lib.js.html">day-04/lib.js</a>, <a href="day-04_lib.js.html#line38">line 38</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Assignment</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="solution"><span class="type-signature"></span>solution<span class="signature">(input)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <h2>--- Day 1: Calorie Counting ---</h2>
+<p>The jungle must be too overgrown and difficult to navigate in vehicles or
+access from the air; the Elves' expedition traditionally goes on foot. As
+your boats approach land, the Elves begin taking inventory of their
+supplies. One important consideration is food - in particular, the number
+of Calories each Elf is carrying (your puzzle input).</p>
+<p>The Elves take turns writing down the number of Calories contained by the
+various meals, snacks, rations, etc. that they've brought with them, one
+item per line. Each Elf separates their own inventory from the previous
+Elf's inventory (if any) by a blank line.</p>
+<p>For example, suppose the Elves finish writing their items' Calories and end
+up with the following list:</p>
+<pre class="prettyprint source lang-text"><code>1000
+2000
+3000
+
+4000
+
+5000
+6000
+
+7000
+8000
+9000
+
+10000
+</code></pre>
+<p>This list represents the Calories of the food carried by five Elves:</p>
+<ul>
+<li>The first Elf is carrying food with <code>1000</code>, <code>2000</code>, and <code>3000</code> Calories, a
+total of <strong><code>6000</code></strong> Calories.</li>
+<li>The second Elf is carrying one food item with <strong><code>4000</code></strong> Calories.</li>
+<li>The third Elf is carrying food with <code>5000</code> and <code>6000</code> Calories, a total of
+<strong><code>11000</code></strong> Calories.</li>
+<li>The fourth Elf is carrying food with <code>7000</code>, <code>8000</code>, and <code>9000</code> Calories, a
+total of <strong><code>24000</code></strong> Calories.</li>
+<li>The fifth Elf is carrying one food item with <strong><code>10000</code></strong> Calories.</li>
+</ul>
+<p>In case the Elves get hungry and need extra snacks, they need to know which
+Elf to ask: they'd like to know how many Calories are being carried by the
+Elf carrying the <em>most</em> Calories. In the example above, this is <strong><code>24000</code></strong>
+(carried by the fourth Elf).</p>
+<p>Find the Elf carrying the most Calories. <strong>How many total Calories is that
+Elf carrying?</strong></p>
+<h2>--- Part Two ---</h2>
+<p>By the time you calculate the answer to the Elves' question, they've
+already realized that the Elf carrying the most Calories of food might
+eventually <strong>run out of snacks</strong>.</p>
+<p>To avoid this unacceptable situation, the Elves would instead like to know
+the total Calories carried by the <strong>top three</strong> Elves carrying the most
+Calories. That way, even if one of those Elves runs out of snacks, they
+still have two backups.</p>
+<p>In the example above, the top three Elves are the fourth Elf (with <code>24000</code>
+Calories), then the third Elf (with 11000 Calories), then the fifth Elf
+(with <code>10000</code> Calories). The sum of the Calories carried by these three elves
+is <strong><code>45000</code></strong>.</p>
+<p>Find the top three Elves carrying the most Calories. <strong>How many Calories are
+those Elves carrying in total?</strong></p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>input</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-01_index.js.html">day-01/index.js</a>, <a href="day-01_index.js.html#line99">line 99</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>solution(`
+1000
+2000
+3000
+
+4000
+
+5000
+6000
+
+7000
+8000
+9000
+
+10000
+`)
+//=> {
+  part1: 24000,
+  part2: 45000,
+}</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="solution"><span class="type-signature"></span>solution<span class="signature">(input)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>input</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-02_index.js.html">day-02/index.js</a>, <a href="day-02_index.js.html#line20">line 20</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>solution(`
+A Y
+B X
+C Z
+`)
+//=> {
+  part1: 15,
+  part2: 12
+}</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="solution"><span class="type-signature"></span>solution<span class="signature">(input)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>input</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-03_index.js.html">day-03/index.js</a>, <a href="day-03_index.js.html#line12">line 12</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="solution"><span class="type-signature"></span>solution<span class="signature">(input)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>input</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The list of section assignment pairs</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-04_index.js.html">day-04/index.js</a>, <a href="day-04_index.js.html#line22">line 22</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>solution(`
+2-4,6-8
+2-3,4-5
+5-7,7-9
+2-8,3-7
+6-6,4-6
+2-6,4-8
+`)
+//=> {
+  part1: 2,
+  part2: 4
+}</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="solution"><span class="type-signature"></span>solution<span class="signature">(input)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>input</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-05_index.js.html">day-05/index.js</a>, <a href="day-05_index.js.html#line6">line 6</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="solution"><span class="type-signature"></span>solution<span class="signature">(input)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <h2>--- Day 6: Tuning Trouble ---</h2>
+<p>The preparations are finally complete; you and the Elves leave camp on foot
+and begin to make your way toward the star fruit grove.</p>
+<p>As you move through the dense undergrowth, one of the Elves gives you a
+handheld device. He says that it has many fancy features, but the most
+important one to set up right now is the communication system.</p>
+<p>However, because he's heard you have significant experience dealing with
+signal-based systems, he convinced the other Elves that it would be okay to
+give you their one malfunctioning device - surely you'll have no problem
+fixing it.</p>
+<p>As if inspired by comedic timing, the device emits a few colorful sparks.</p>
+<p>To be able to communicate with the Elves, the device needs to lock on to
+their signal. The signal is a series of seemingly-random characters that
+the device receives one at a time.</p>
+<p>To fix the communication system, you need to add a subroutine to the device
+that detects a start-of-packet marker in the datastream. In the protocol
+being used by the Elves, the start of a packet is indicated by a sequence
+of four characters that are all different.</p>
+<p>The device will send your subroutine a datastream buffer (your puzzle
+input); your subroutine needs to identify the first position where the four
+most recently received characters were all different. Specifically, it
+needs to report the number of characters from the beginning of the buffer
+to the end of the first such four-character marker.</p>
+<p>For example, suppose you receive the following datastream buffer:</p>
+<pre class="prettyprint source lang-text"><code>mjqjpqmgbljsphdztnvjfqwrcgsmlb
+</code></pre>
+<p>After the first three characters (mjq) have been received, there haven't
+been enough characters received yet to find the marker. The first time a
+marker could occur is after the fourth character is received, making the
+most recent four characters mjqj. Because j is repeated, this isn't a
+marker.</p>
+<p>The first time a marker appears is after the seventh character arrives.
+Once it does, the last four characters received are jpqm, which are all
+different. In this case, your subroutine should report the value 7, because
+the first start-of-packet marker is complete after 7 characters have been
+processed.</p>
+<p>Here are a few more examples:</p>
+<ul>
+<li><code>bvwbjplbgvbhsrlpgdmjqwftvncz</code>: first marker after character 5</li>
+<li><code>nppdvjthqldpwncqszvftbrmjlhg</code>: first marker after character 6</li>
+<li><code>nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg</code>: first marker after character 10</li>
+<li><code>zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw</code>: first marker after character 11</li>
+</ul>
+<p><em>How many characters need to be processed before the first start-of-packet
+marker is detected?</em></p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>input</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-06_index.js.html">day-06/index.js</a>, <a href="day-06_index.js.html#line73">line 73</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>solution("mjqjpqmgbljsphdztnvjfqwrcgsmlb")
+//=> {
+  part1: 7,
+  part2: 19,
+}</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="solution"><span class="type-signature"></span>solution<span class="signature">(input)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>input</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-07_index.js.html">day-07/index.js</a>, <a href="day-07_index.js.html#line39">line 39</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>solution(`
+$ cd /
+$ ls
+dir a
+14848514 b.txt
+8504156 c.dat
+dir d
+$ cd a
+$ ls
+dir e
+29116 f
+2557 g
+62596 h.lst
+$ cd e
+$ ls
+584 i
+$ cd ..
+$ cd ..
+$ cd d
+$ ls
+4060174 j
+8033020 d.log
+5626152 d.ext
+7214296 k
+`)
+//=> {
+  part1: 95437,
+  part2: 24933642
+}</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="solution"><span class="type-signature"></span>solution<span class="signature">(input)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>input</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-08_index.js.html">day-08/index.js</a>, <a href="day-08_index.js.html#line16">line 16</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>solution(`
+30373
+25512
+65332
+33549
+35390
+`)
+//=> {
+  part1: 21,
+  part2: 8
+}</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="transposeArray"><span class="type-signature"></span>transposeArray<span class="signature">(array)</span><span class="type-signature"> &rarr; {Array.&lt;Array.&lt;T>>}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Transpose an array.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>array</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Array.&lt;T>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the array to transpose</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="utils.js.html">utils.js</a>, <a href="utils.js.html#line49">line 49</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>the transposed array</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;Array.&lt;T>></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Examples</h5>
+    
+    <pre class="prettyprint"><code>transposeArray([
+  [1, 2],
+  [3, 4],
+])
+//=> [
+  [1, 3],
+  [2, 4],
+]</code></pre>
+
+    <pre class="prettyprint"><code>transposeArray([
+  ['a', 'b', 'c'],
+  ['d', 'e', 'f'],
+])
+//=> [
+  ['a', 'd'],
+  ['b', 'e'],
+  ['c', 'f'],
+]</code></pre>
+
+
+
+        
+    
+
+    
+        <h3 class="subsection-title">Type Definitions</h3>
+
+        
+                
+<h4 class="name" id="Move">Move</h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-05_lib.js.html">day-05/lib.js</a>, <a href="day-05_lib.js.html#line3">line 3</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="MoveTuple">MoveTuple</h4>
+
+
+
+
+<div class="description">
+    <p>JSDoc cannot parse TypeScript types, so let's use this trick:
+https://github.com/jsdoc/jsdoc/issues/1073#issuecomment-167204327</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">number</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>0</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">move</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Their move</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>1</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">move</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Our move</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>length</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">2</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Tuple size</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-02_lib.js.html">day-02/lib.js</a>, <a href="day-02_lib.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="Pair">Pair</h4>
+
+
+
+
+<div class="description">
+    <p>JSDoc cannot parse TypeScript types, so let's use this trick:
+https://github.com/jsdoc/jsdoc/issues/1073#issuecomment-167204327</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Array.&lt;number></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>0</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>From</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>1</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>To</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>length</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">2</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Tuple size</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>0</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Assignment</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>From</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>1</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Assignment</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>To</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>length</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">2</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Tuple size</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="day-04_lib.js.html">day-04/lib.js</a>, <a href="day-04_lib.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#calculateMove">calculateMove</a></li><li><a href="global.html#calculateOutcomeScore">calculateOutcomeScore</a></li><li><a href="global.html#calculateScore">calculateScore</a></li><li><a href="global.html#chunkArray">chunkArray</a></li><li><a href="global.html#contains">contains</a></li><li><a href="global.html#findCommon">findCommon</a></li><li><a href="global.html#findNumShorter">findNumShorter</a></li><li><a href="global.html#findUnique">findUnique</a></li><li><a href="global.html#getPriority">getPriority</a></li><li><a href="global.html#main">main</a></li><li><a href="global.html#overlaps">overlaps</a></li><li><a href="global.html#parseCommand">parseCommand</a></li><li><a href="global.html#parseContents">parseContents</a></li><li><a href="global.html#parseCrateDefinitions">parseCrateDefinitions</a></li><li><a href="global.html#parseInput">parseInput</a></li><li><a href="global.html#parseLine">parseLine</a></li><li><a href="global.html#parseMove">parseMove</a></li><li><a href="global.html#parseMoves">parseMoves</a></li><li><a href="global.html#parseOutput">parseOutput</a></li><li><a href="global.html#parseRow">parseRow</a></li><li><a href="global.html#parseSections">parseSections</a></li><li><a href="global.html#solution">solution</a></li><li><a href="global.html#transposeArray">transposeArray</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Sun Dec 11 2022 11:50:57 GMT+0100 (Central European Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

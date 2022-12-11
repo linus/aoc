@@ -1,6 +1,6 @@
 {
   "include": ["**/*.js"],
-  "exclude": ["test", "node_modules"],
+  "exclude": ["docs", "node_modules"],
   "compilerOptions": {
     "lib": ["esnext"],
     "allowJs": true,
