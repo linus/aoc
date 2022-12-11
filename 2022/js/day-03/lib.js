@@ -15,7 +15,7 @@ export function parseLine(line) {
  *
  * @template T
  * @param {T[]} itemList
- * @returns {T[][]} The first and second half of the string
+ * @returns {T[][]} The first and second half of the array
  * @example parseContents([1, 2, 3, 4])
  * //=> [[1, 2], [3, 4]]
  * @example parseContents(['a', 'b', 'c', 'd'])
@@ -36,6 +36,8 @@ export function parseContents(itemList) {
  * @returns {T | undefined} The first common member found
  * @example findCommon([['foo', 'bar'], ['foo', 'baz']])
  * //=> 'foo'
+ * @example findCommon([[1, 2, 3], [5, 4, 3], [9, 6, 3]])
+ * //=> 3
  */
 export function findCommon([first, ...rest]) {
   return first.find((item) => rest.every((other) => other.includes(item)));
