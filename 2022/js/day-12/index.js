@@ -4,7 +4,7 @@ import { AStar, initializeNeighborhood, parseHeightMap } from './lib.js';
  * @param {string} input
  * @returns {{
  *   part1: number,
- *   part2: undefined
+ *   part2: number
  * }}
  * @example solution(`
  * Sabqponm
@@ -32,14 +32,12 @@ export function solution(input) {
 
   const part2 = lowPoints
     .map((p) => AStar(p, end))
-    .filter((path) => typeof path !== 'undefined')
-    // @ts-ignore
+    .filter(Array.isArray)
     .sort((a, b) => a.length - b.length)[0];
 
   return {
     // @ts-ignore
     part1: part1.length,
-    // @ts-ignore
     part2: part2.length,
   };
 }
