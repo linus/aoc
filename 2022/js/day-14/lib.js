@@ -8,9 +8,9 @@
 
 /**
  * @param {string} row
- * @returns {Set<Path>}
+ * @returns {Path[]}
  * @example parseRock('498,4 -> 498,6 -> 496,6')
- * //=> new Set([{
+ * //=> [{
  *   direction: 'h',
  *   from: { x: 498, y: 4 },
  *   to: { x: 498, y: 6 }
@@ -18,26 +18,26 @@
  *   direction: 'v',
  *   from: { x: 498, y: 6 },
  *   to: { x: 496, y: 6 }
- * }])
+ * }]
  */
 export function parseRock(row) {
   const points = row.split(' -> ').map((point) => point.split(',').map(Number));
-  const lines = new Set();
-  for (const [index, [fromX, fromY]] of points.entries()) {
-    if (points[index + 1]) {
+
+  return Array.from(points.slice(0, -1).entries()).map(
+    ([index, [fromX, fromY]]) => {
       const [toX, toY] = points[index + 1];
-      lines.add({
+
+      return {
         direction: fromX === toX ? 'h' : 'v',
         from: { x: fromX, y: fromY },
         to: { x: toX, y: toY },
-      });
+      };
     }
-  }
-  return lines;
+  );
 }
 
 /**
- * @param {Array<Set<Path>>} paths
+ * @param {Path[][]} paths
  * @returns {string[][]}
  */
 export function buildMap(paths) {
