@@ -4,6 +4,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "lib": ["ESNext"],
+    "module": "ESNext",
     "allowJs": true,
     "checkJs": true,
     "strict": true,
