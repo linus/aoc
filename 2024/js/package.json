@@ -1,0 +1,33 @@
+{
+  "name": "aoc-2022",
+  "version": "1.0.0",
+  "description": "The solutions for Advent of Code 2022 in JS",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "mocha",
+    "watch": "mocha --watch",
+    "doc": "jsdoc -c .jsdoc.json"
+  },
+  "keywords": [],
+  "author": "Linus Thiel <linus@yesbabyyes.se>",
+  "license": "ISC",
+  "devDependencies": {
+    "@linus/testy": "^1.2.3",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.10.1",
+    "chai": "^5.1.2",
+    "eslint": "^9.16.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jsdoc": "^50.6.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "jsdoc": "^4.0.4",
+    "jsdoc-api": "^9.3.4",
+    "mocha": "^10.8.2",
+    "prettier": "^3.4.1",
+    "typescript": "^5.7.2"
+  },
+  "prettier": {
+    "singleQuote": true
+  }
+}

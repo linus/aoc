@@ -1,0 +1,14 @@
+{
+  "include": ["**/*.js"],
+  "exclude": ["docs", "node_modules"],
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["ESNext"],
+    "module": "ESNext",
+    "allowJs": true,
+    "checkJs": true,
+    "strict": true,
+    "noEmit": true,
+    "downlevelIteration": true
+  }
+}
