@@ -16,7 +16,6 @@
  * }
  */
 export function solution(input) {
-  /** @type {number[][]} */
   const [left, right] = input
     .trim()
     .split('\n')
@@ -27,21 +26,14 @@ export function solution(input) {
         right.push(r);
         return [left, right];
       },
-      /** @type {number[][]} */ [[], []]
+      /** @type {number[][]} */ ([[], []])
     )
-    .map((arr) => arr.sort());
+    .map((arr) => arr.toSorted());
 
   const diffs = left.map((l, i) => Math.abs(l - right[i]));
 
-  const freqs = right.reduce(
-    (freqs, num) => {
-      freqs[num] = (freqs[num] || 0) + 1;
-      return freqs;
-    },
-    /** @type {Record<number, number>} */ {}
-  );
-
-  const similarities = left.map((l) => l * (freqs[l] ?? 0));
+  const freqs = Object.groupBy(right, (n) => n);
+  const similarities = left.map((l) => l * (freqs[l]?.length ?? 0));
 
   return {
     part1: diffs.reduce((a, b) => a + b),
