@@ -1,7 +1,7 @@
 /**
  *
  * @param {string} input
- * @returns {{part1: number, part2: number}}
+ * @returns {{part1: number, part2: number}} The solution to parts 1 and 2 of the problem
  * @example solution(`
  * 7 6 4 2 1
  * 1 2 7 8 9
@@ -16,20 +16,20 @@
  * }
  */
 export function solution(input) {
-  const records = input
+  const reports = input
     .trim()
     .split('\n')
     .map((line) => line.split(/\s+/).map(Number));
 
   return {
-    part1: records.filter(isSafe).length,
-    part2: records.filter((record) => permutations(record).some(isSafe)).length,
+    part1: reports.filter(isSafe).length,
+    part2: reports.filter((report) => dampenReport(report).some(isSafe)).length,
   };
 }
 
-/** @param record {number[]} */
-function isSafe(record) {
-   return record.slice(0, -1).map((level, index) => level - record[index + 1])
+/** @param report {number[]} */
+function isSafe(report) {
+   return report.slice(0, -1).map((level, index) => level - report[index + 1])
     .every(
       (diff, index, diffs) =>
         (diffs[index + 1] === undefined ||
@@ -39,10 +39,10 @@ function isSafe(record) {
     );
 }
 
-/** @param record {number[]} */
-function permutations(record) {
-  return record.reduce((permutations, _, index, array) => [
+/** @param report {number[]} */
+function dampenReport(report) {
+  return report.reduce((permutations, _, index, array) => [
     ...permutations,
     [...array.slice(0, index), ...array.slice(index + 1)],
-  ], [record]);
+  ], [report]);
 }
