@@ -1,7 +1,7 @@
 {
-  "name": "aoc-2022",
+  "name": "aoc-2024",
   "version": "1.0.0",
-  "description": "The solutions for Advent of Code 2022 in JS",
+  "description": "The solutions for Advent of Code 2024 in JS",
   "main": "index.js",
   "type": "module",
   "scripts": {
