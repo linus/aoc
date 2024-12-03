@@ -21,11 +21,10 @@ export function solution(input) {
     .split('\n')
     .map((line) => line.split(/\s+/).map(Number))
     .reduce(
-      ([left, right], [l, r]) => {
-        left.push(l);
-        right.push(r);
-        return [left, right];
-      },
+      ([left, right], [l, r]) => [
+        [...left, l],
+        [...right, r],
+      ],
       /** @type {number[][]} */ ([[], []])
     )
     .map((arr) => arr.toSorted());
