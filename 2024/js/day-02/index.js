@@ -1,3 +1,5 @@
+import { isSafe, dampenReport } from './lib.js';
+
 /**
  *
  * @param {string} input
@@ -25,24 +27,4 @@ export function solution(input) {
     part1: reports.filter(isSafe).length,
     part2: reports.filter((report) => dampenReport(report).some(isSafe)).length,
   };
-}
-
-/** @param report {number[]} */
-function isSafe(report) {
-   return report.slice(0, -1).map((level, index) => level - report[index + 1])
-    .every(
-      (diff, index, diffs) =>
-        (diffs[index + 1] === undefined ||
-          Math.sign(diff) === Math.sign(diffs[index + 1])) &&
-        1 <= Math.abs(diff) &&
-        Math.abs(diff) <= 3
-    );
-}
-
-/** @param report {number[]} */
-function dampenReport(report) {
-  return report.reduce((permutations, _, index, array) => [
-    ...permutations,
-    [...array.slice(0, index), ...array.slice(index + 1)],
-  ], [report]);
 }
