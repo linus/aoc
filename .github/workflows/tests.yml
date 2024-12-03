@@ -27,7 +27,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-      working-directory: 2024/js
+        cache-dependency-path: 2024/js/package-lock.json
     - name: Run tests
       run: npm cit
       working-directory: 2024/js
