@@ -1,7 +1,7 @@
 /**
  *
  * @param {string} input
- * @returns {{part1: number, part2: number}}
+ * @returns {{part1: number, part2: number}} The solution to parts 1 and 2 of the problem
  * @example solution(`
  * 3   4
  * 4   3
