@@ -19,20 +19,14 @@
  */
 export function solution(input) {
   const memory = input.trim();
-  const re = /mul\((\d+),(\d+)\)/g;
+  const re = /(mul|don't|do)\((?:(\d+),(\d+))?\)/g;
   
-  let instruction;
-  let result = 0;
-  while (instruction = re.exec(memory)) {
-    const [_, a, b] = instruction;
-    result += Number(a) * Number(b);
-  }
+  let part1 = 0;
+  let part2 = 0;
 
   let enabled = true;
-  let result2 = 0;
-  const re2 = /(mul|don't|do)\((?:(\d+),(\d+))?\)/g;
-  while (instruction = re2.exec(memory)) {
-    const [_, operation, a, b] = instruction;
+
+  for (const [_, operation, a, b] of memory.matchAll(re)) {
     switch (operation) {
       case 'don\'t':
         enabled = false;
@@ -41,15 +35,16 @@ export function solution(input) {
         enabled = true;
         break;
       case 'mul':
+        part1 += Number(a) * Number(b);
         if (enabled) {
-          result2 += Number(a) * Number(b);
+          part2 += Number(a) * Number(b);
         }
         break;
     }
   }
 
   return {
-    part1: result,
-    part2: result2,
+    part1,
+    part2,
   };
 }
