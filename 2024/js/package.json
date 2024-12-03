@@ -16,7 +16,7 @@
     "@linus/testy": "^1.2.3",
     "@types/mocha": "^10.0.10",
     "@types/node": "^22.10.1",
-    "chai": "^5.1.2",
+    "chai": "^4.5.0",
     "eslint": "^9.16.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-jsdoc": "^50.6.0",
