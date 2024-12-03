@@ -18,30 +18,22 @@
  * }
  */
 export function solution(input) {
-  const memory = input.trim();
-  const re = /(mul|don't|do)\((?:(\d+),(\d+))?\)/g;
-  
-  let part1 = 0;
-  let part2 = 0;
-
-  let enabled = true;
-
-  for (const [_, operation, a, b] of memory.matchAll(re)) {
-    switch (operation) {
-      case 'don\'t':
-        enabled = false;
-        break;
-      case 'do':
-        enabled = true;
-        break;
-      case 'mul':
-        part1 += Number(a) * Number(b);
-        if (enabled) {
-          part2 += Number(a) * Number(b);
-        }
-        break;
-    }
-  }
+  const { part1, part2 } = input
+    .trim()
+    .matchAll(/(mul|don't|do)\((?:(\d+),(\d+))?\)/g)
+    .reduce(
+      ({ enabled, part1, part2 }, [_, operation, a, b]) =>
+        operation === "don't"
+          ? { enabled: false, part1, part2 }
+          : operation === 'do'
+            ? { enabled: true, part1, part2 }
+            : {
+                enabled,
+                part1: part1 + Number(a) * Number(b),
+                part2: enabled ? part2 + Number(a) * Number(b) : part2,
+              },
+      { enabled: true, part1: 0, part2: 0 },
+    );
 
   return {
     part1,
