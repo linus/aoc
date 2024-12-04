@@ -25,6 +25,6 @@ export function solution(input) {
 
   return {
     part1: reports.filter(isSafe).length,
-    part2: reports.filter((report) => dampenReport(report).some(isSafe)).length,
+    part2: reports.filter((report) => isSafe(report) || dampenReport(report).some(isSafe)).length,
   };
 }
