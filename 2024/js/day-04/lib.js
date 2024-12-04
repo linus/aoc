@@ -21,23 +21,23 @@
  * //=> 3
  */
 export function search(haystack, needle) {
-    const n = needle.length;
-    const m = needle[0].length;
-    const rows = haystack.length;
-    const cols = haystack[0].length;
+  const n = needle.length;
+  const m = needle[0].length;
+  const rows = haystack.length;
+  const cols = haystack[0].length;
 
-    let numFound = 0;
-    for (let i = 0; i < rows - n + 1; i++) {
-        cols: for (let j = 0; j < cols - m + 1; j++) {
-            for (let k = 0; k < n; k++) {
-                for (let l = 0; l < m; l++) {
-                    if (typeof needle[k][l] === 'string' && needle[k][l] !== haystack[i + k][j + l]) {
-                        continue cols;
-                    }
-                }
-            }
-            numFound++;
+  let numFound = 0;
+  for (let i = 0; i < rows - n + 1; i++) {
+    cols: for (let j = 0; j < cols - m + 1; j++) {
+      for (let k = 0; k < n; k++) {
+        for (let l = 0; l < m; l++) {
+          if (needle[k][l] !== undefined && needle[k][l] !== haystack[i + k][j + l]) {
+            continue cols;
+          }
         }
+      }
+      numFound++;
     }
-    return numFound;
+  }
+  return numFound;
 }
