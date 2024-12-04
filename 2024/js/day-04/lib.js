@@ -31,7 +31,10 @@ export function search(haystack, needle) {
     cols: for (let j = 0; j < cols - m + 1; j++) {
       for (let k = 0; k < n; k++) {
         for (let l = 0; l < m; l++) {
-          if (needle[k][l] !== undefined && needle[k][l] !== haystack[i + k][j + l]) {
+          if (
+            needle[k][l] !== undefined &&
+            needle[k][l] !== haystack[i + k][j + l]
+          ) {
             continue cols;
           }
         }
