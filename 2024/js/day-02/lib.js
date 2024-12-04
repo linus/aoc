@@ -10,12 +10,16 @@
  * @example isSafe([7, 6, 4, 2, 1]) //=> true
  */
 export function isSafe(report) {
-  return report.slice(0, -1).map((level, index) => level - report[index + 1]) // Calculate the differences between each level
-    .every(                                                                   //   For each difference, ensure that
-      (diff, index, diffs) => (diffs[index + 1] === undefined ||              //     if there is a next difference
-        Math.sign(diff) === Math.sign(diffs[index + 1])) &&                   //       the signs are the same, and
-        1 <= Math.abs(diff) &&                                                //     the difference is within
-        Math.abs(diff) <= 3                                                   //       reasonable bounds
+  // prettier-ignore
+  return report
+    .slice(0, -1)
+    .map((level, index) => level - report[index + 1])         // Calculate the differences between each level
+    .every(                                                   //   For each difference, ensure that
+      (diff, index, diffs) =>
+        (diffs[index + 1] === undefined ||                    //     if there is a next difference
+          Math.sign(diff) === Math.sign(diffs[index + 1])) && //       the signs are the same, and
+        1 <= Math.abs(diff) &&                                //     the difference is within
+        Math.abs(diff) <= 3,                                  //       reasonable bounds
     );
 }
 
@@ -28,8 +32,12 @@ export function isSafe(report) {
  * //=> [[7], [1]]
  */
 export function dampenReport(report) {
-  return report.reduce((dampenedReports, _, index, array) => [     // For each level in the report
-    ...dampenedReports,                                            //   return the accumulated dampened reports
-    [...array.slice(0, index), ...array.slice(index + 1)],         //   and the report without the current level
-  ], /** @type {Report[]} */ ([]));
+  // prettier-ignore
+  return report.reduce(
+    (dampenedReports, _, index, array) => [                  // For each level in the report
+      ...dampenedReports,                                    //   return the accumulated dampened reports
+      [...array.slice(0, index), ...array.slice(index + 1)], //   and the report without the current level
+    ],
+    /** @type {Report[]} */ ([]),
+  );
 }

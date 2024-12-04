@@ -1,8 +1,8 @@
 import { search } from './lib.js';
 
 /**
- * 
- * @param {string} input 
+ *
+ * @param {string} input
  * @returns {{part1: number, part2: number}} The solution to parts 1 and 2 of the problem
  * @example solution(`
  * MMMSXXMASM
@@ -22,8 +22,12 @@ import { search } from './lib.js';
  * }
  */
 export function solution(input) {
-  const wordSearch = input.trim().split('\n').map(line => line.split(''));
-  
+  const wordSearch = input
+    .trim()
+    .split('\n')
+    .map((line) => line.split(''));
+
+  // prettier-ignore
   const partPatterns = [
     [
       [
@@ -92,7 +96,7 @@ export function solution(input) {
       ],
     ],
    ];
-  
+
   const [part1, part2] = partPatterns.map((patterns) =>
     patterns
       .map((pattern) => search(wordSearch, pattern))

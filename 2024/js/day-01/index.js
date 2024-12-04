@@ -25,7 +25,7 @@ export function solution(input) {
         [...left, l],
         [...right, r],
       ],
-      /** @type {number[][]} */ ([[], []])
+      /** @type {number[][]} */ ([[], []]),
     )
     .map((arr) => arr.toSorted());
 
