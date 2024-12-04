@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "mocha",
+    "test": "mocha && tsc && eslint",
     "watch": "mocha --watch",
     "doc": "jsdoc -c .jsdoc.json"
   },
@@ -13,7 +13,10 @@
   "author": "Linus Thiel <linus@yesbabyyes.se>",
   "license": "ISC",
   "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
+    "@eslint/js": "^9.16.0",
     "@linus/testy": "^1.2.3",
+    "@types/eslint__eslintrc": "^2.1.2",
     "@types/mocha": "^10.0.10",
     "@types/node": "^22.10.1",
     "chai": "^4.5.0",
