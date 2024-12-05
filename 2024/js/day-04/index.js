@@ -95,7 +95,7 @@ export function solution(input) {
         ['S',   ,'M',],
       ],
     ],
-   ];
+  ];
 
   const [part1, part2] = partPatterns.map((patterns) =>
     patterns
