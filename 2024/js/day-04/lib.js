@@ -25,10 +25,10 @@ export function search(haystack, needle) {
   const m = needle[0].length;
   const rows = haystack.length;
   const cols = haystack[0].length;
+  let count = 0;
 
-  let numFound = 0;
-  for (let i = 0; i < rows - n + 1; i++) {
-    cols: for (let j = 0; j < cols - m + 1; j++) {
+  for (let i = 0; i <= rows - n; i++) {
+    cols: for (let j = 0; j <= cols - m; j++) {
       for (let k = 0; k < n; k++) {
         for (let l = 0; l < m; l++) {
           if (
@@ -39,8 +39,9 @@ export function search(haystack, needle) {
           }
         }
       }
-      numFound++;
+      count++;
     }
   }
-  return numFound;
+
+  return count;
 }
