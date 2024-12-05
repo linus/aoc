@@ -41,13 +41,15 @@ export function solution(input) {
 
   const pageOrderingRules = pageOrderingRulesInput
     .split('\n')
-    .map((line) => line.split('|'))
+    .map((line) => line.split('|').map(Number))
     .reduce((rules, [before, after]) => {
       rules[before] = rules[before] ?? [];
       rules[before].push(after);
       return rules;
-    }, /** @type {Object<string, string[]>} */ ({}));
-  const updates = updateInput.split('\n').map((line) => line.split(','));
+    }, /** @type {Object<number, number[]>} */ ({}));
+  const updates = updateInput
+    .split('\n')
+    .map((line) => line.split(',').map(Number));
 
   const { valid, invalid } = Object.groupBy(updates, (pages) =>
     pages.every(
@@ -74,10 +76,10 @@ export function solution(input) {
 
   return {
     part1: (valid ?? [])
-      .map((pages) => Number(pages[Math.floor(pages.length / 2)]))
+      .map((pages) => pages[Math.floor(pages.length / 2)])
       .reduce((a, b) => a + b),
     part2: (corrected ?? [])
-      .map((pages) => Number(pages[Math.floor(pages.length / 2)]))
+      .map((pages) => pages[Math.floor(pages.length / 2)])
       .reduce((a, b) => a + b),
   };
 }
