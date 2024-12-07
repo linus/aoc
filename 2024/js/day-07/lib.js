@@ -1,7 +1,14 @@
 /**
+ * @callback operation
+ * @param {number} a
+ * @param {number} b
+ * @returns {number}
+ */
+
+/**
  * @param {number} result -- The expected result
  * @param {number[]} numbers -- The list of numbers
- * @param {Array<Function>} operations -- Valid operations
+ * @param {operation[]} operations -- Valid operations
  * @returns {boolean}
  * @example test(190, [10, 19], [add, mul])
  * //=> true
