@@ -1,4 +1,4 @@
-import { test } from './lib.js';
+import { add, concat, mul, test } from './lib.js';
 
 /**
  * @param {string} input
@@ -30,16 +30,21 @@ export function solution(input) {
       }),
   );
 
+  const operations = {
+    part1: [add, mul],
+    part2: [add, mul, concat],
+  };
+
+  const [part1, part2] = Object.values(operations).map((operations) =>
+    equations
+      .entries()
+      .filter(([result, numbers]) => test(result, numbers, operations))
+      .map(([result]) => result)
+      .reduce((a, b) => a + b),
+  );
+
   return {
-    part1: equations
-      .entries()
-      .filter(([result, numbers]) => test(result, numbers, false))
-      .map(([result]) => result)
-      .reduce((a, b) => a + b),
-    part2: equations
-      .entries()
-      .filter(([result, numbers]) => test(result, numbers, true))
-      .map(([result]) => result)
-      .reduce((a, b) => a + b),
+    part1,
+    part2,
   };
 }
