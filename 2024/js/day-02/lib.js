@@ -5,9 +5,12 @@
 /**
  * @param report {Report}
  * @returns {boolean} Whether the report is safe
- * @example isSafe([1, 2, 4, 6, 9]) //=> true
- * @example isSafe([1, 2, 4, 5, 9]) //=> false
- * @example isSafe([7, 6, 4, 2, 1]) //=> true
+ * @example isSafe([1, 2, 4, 6, 9])
+ * //=> true
+ * @example isSafe([1, 2, 4, 5, 9])
+ * //=> false
+ * @example isSafe([7, 6, 4, 2, 1])
+ * //=> true
  */
 export function isSafe(report) {
   // prettier-ignore
@@ -34,9 +37,9 @@ export function isSafe(report) {
 export function dampenReport(report) {
   // prettier-ignore
   return report.reduce(
-    (dampenedReports, _, index, array) => [                  // For each level in the report
-      ...dampenedReports,                                    //   return the accumulated dampened reports
-      [...array.slice(0, index), ...array.slice(index + 1)], //   and the report without the current level
+    (dampenedReports, _, index, array) => [                   // For each level in the report
+      ...dampenedReports,                                     //   return the accumulated dampened reports
+      [...array.slice(0, index), ...array.slice(index + 1)],  //   and the report without the current level
     ],
     /** @type {Report[]} */ ([]),
   );
