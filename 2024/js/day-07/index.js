@@ -20,18 +20,25 @@ import { test } from './lib.js';
  * }
  */
 export function solution(input) {
-  const equations = input
-    .trim()
-    .split('\n')
-    .map((line) => line.split(/\s*:?\s+/).map(Number));
+  const equations = new Map(
+    input
+      .trim()
+      .split('\n')
+      .map((line) => {
+        const [result, numbers] = line.split(/\s*:\s*/);
+        return [Number(result), numbers.split(/\s+/).map(Number)];
+      }),
+  );
 
   return {
     part1: equations
-      .filter(([result, ...numbers]) => test(result, numbers, false))
+      .entries()
+      .filter(([result, numbers]) => test(result, numbers, false))
       .map(([result]) => result)
       .reduce((a, b) => a + b),
     part2: equations
-      .filter(([result, ...numbers]) => test(result, numbers, true))
+      .entries()
+      .filter(([result, numbers]) => test(result, numbers, true))
       .map(([result]) => result)
       .reduce((a, b) => a + b),
   };
