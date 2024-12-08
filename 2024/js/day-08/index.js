@@ -47,7 +47,7 @@ export function solution(input) {
   );
 
   const antinodes = pairs
-    .map(([a, b]) => [
+    .flatMap(([a, b]) => [
       {
         row: a.row + a.row - b.row,
         col: a.col + a.col - b.col,
@@ -57,7 +57,6 @@ export function solution(input) {
         col: b.col + b.col - a.col,
       },
     ])
-    .flat()
     .filter(({ row, col }) => map[row]?.[col] ?? false);
 
   const resonantAntinodes = map
