@@ -1,4 +1,4 @@
-import { nextStep } from './lib.js';
+import { blink as blink } from './lib.js';
 
 /**
  * @param {string} input
@@ -12,12 +12,8 @@ import { nextStep } from './lib.js';
 export function solution(input) {
   const stones = input.trim().split(' ');
 
-  const part1 = stones
-    .map((stone) => nextStep(stone, 25))
-    .reduce((a, b) => a + b);
-  const part2 = stones
-    .map((stone) => nextStep(stone, 75))
-    .reduce((a, b) => a + b);
+  const part1 = stones.map((stone) => blink(stone, 25)).reduce((a, b) => a + b);
+  const part2 = stones.map((stone) => blink(stone, 75)).reduce((a, b) => a + b);
 
   return {
     part1: part1,

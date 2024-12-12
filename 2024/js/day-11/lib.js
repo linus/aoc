@@ -1,19 +1,19 @@
 /**
  * @param {string} stone
- * @param {number} count
+ * @param {number} times
  * @returns {number}
- * @example _nextStep('125', 4)
+ * @example _blink('125', 4)
  * //=> 3
  */
-export function _nextStep(stone, count) {
-  if (count === 0) return 1;
-
-  return stone === '0'
-    ? nextStep('1', count - 1)
-    : stone.length % 2 === 0
-      ? nextStep(stone.slice(0, stone.length / 2), count - 1) +
-        nextStep(Number(stone.slice(stone.length / 2)).toString(), count - 1)
-      : nextStep((Number(stone) * 2024).toString(), count - 1);
+export function _blink(stone, times) {
+  return times === 0
+    ? 1
+    : stone === '0'
+      ? blink('1', times - 1)
+      : stone.length % 2 === 0
+        ? blink(stone.slice(0, stone.length / 2), times - 1) +
+          blink(Number(stone.slice(stone.length / 2)).toString(), times - 1)
+        : blink((Number(stone) * 2024).toString(), times - 1);
 }
 
 const memo = new Map();
@@ -26,4 +26,4 @@ const memoize =
       return memo.get(args.join(','));
     };
 
-export const nextStep = memoize(_nextStep);
+export const blink = memoize(_blink);
