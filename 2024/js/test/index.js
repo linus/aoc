@@ -42,4 +42,9 @@ describe('AoC 2024', () => {
   describe('Day 9', () => {
     test('day-09/index.js');
   });
+
+  describe('Day 11', () => {
+    test('day-11/index.js');
+    test('day-11/lib.js');
+  });
 });
